@@ -5,12 +5,39 @@
 
 using namespace std;
 
-//set»ù±¾¸ÅÄî£ºËùÓĞÔªËØ»áÔÚ²åÈëÊ±×Ô¶¯ÅÅĞò£¬µ×²ã½á¹¹ÊÇ¶ş²æÊ÷ÊµÏÖ
-//×¢Òâ£ºsetºÍmultisetµÄÇø±ğ£ºset²»ÔÊĞíÈİÆ÷ÓĞÖØ¸´ÔªËØ£¬µ«ÊÇmultisetÔÊĞí
+//setåŸºæœ¬æ¦‚å¿µï¼šæ‰€æœ‰å…ƒç´ ä¼šåœ¨æ’å…¥æ—¶è‡ªåŠ¨æ’åºï¼Œåº•å±‚ç»“æ„æ˜¯äºŒå‰æ ‘å®ç°
+//æ³¨æ„ï¼šsetå’Œmultisetçš„åŒºåˆ«ï¼šsetä¸å…è®¸å®¹å™¨æœ‰é‡å¤å…ƒç´ ï¼Œä½†æ˜¯multisetå…è®¸
 
-void Print(multiset<int>& s);
+class Person
+{
+public:
+	string m_Name;
+	int m_Age;
+	Person(string name, int age)
+	{
+		this->m_Name = name;
+		this->m_Age = age;
+	}
+};
+
+class comparePerson
+{
+public:
+	bool operator()(const Person& p1, const Person& p2) const
+	{
+		//æŒ‰å¹´é¾„é™åº
+		return p1.m_Age > p2.m_Age;
+	}
+};
+
+void Print_Multiset(multiset<int>& s);
 
 void Print(set<int>& s);
+
+
+void Print_Person1(set<Person, comparePerson>& s);
+
+void Print_Person2(set<Person>& s);
 
 void test1();
 
@@ -18,3 +45,16 @@ void test2();
 
 void test3();
 
+void test4();
+
+void test5();
+
+void test6();
+
+void test7();
+
+void test8();
+
+void test9();
+
+void test10();

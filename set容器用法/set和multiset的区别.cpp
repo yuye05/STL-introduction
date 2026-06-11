@@ -4,6 +4,7 @@ void test7()
 {
 	set<int> s1;
 	//s1.insert(10);
+	//转到定义看看底层返回值类型不同
 	pair<set<int>::iterator, bool> ret = s1.insert(10);
 
 	if (ret.second)
@@ -29,6 +30,5 @@ void test7()
 		cout << *it << " ";
 	}
 	cout << endl;
-
 
 }
